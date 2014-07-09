@@ -1,0 +1,29 @@
+/**** copy Raymond Jacobson 2014 ****/
+/* DEFINITIONS */
+/* GLOBALS */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', Helvetica, sans-serif;
+  background: #b4b4b4;
+}
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf {
+  *zoom: 1;
+}
+.cf:after {
+  clear: both;
+}
+.justify-align {
+  text-align: justify;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}

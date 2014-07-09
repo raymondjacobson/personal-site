@@ -1,0 +1,33 @@
+/**** copy Raymond Jacobson 2014 ****/
+
+/* DEFINITIONS */
+// colors
+MAIN_GRAY = #A1A1A1
+PALE_BLUE = #7F8EA4
+PALE_ORANGE = #AB8169
+
+/* GLOBALS */
+body
+  margin 0
+  padding 0
+  font-family 'Lato', Helvetica, sans-serif
+  background lighten(MAIN_GRAY, 20%)
+
+.cf:before,
+.cf:after
+  content " "
+  display table
+
+.cf
+  *zoom 1
+  &:after
+    clear both
+
+.justify-align
+  text-align justify
+
+.pull-right
+  float right
+
+.pull-left
+  float left
