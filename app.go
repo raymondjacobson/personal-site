@@ -23,7 +23,7 @@ func reqLogger(req *http.Request) {
 func index(res http.ResponseWriter, req *http.Request) {
   reqLogger(req)
   return_vals := map[string]string{
-    "c":"world",
+    "title":"Raymond Jacobson",
   }
   data := mustache.RenderFile("templates/layout.html", return_vals)
   io.WriteString(res, data)
