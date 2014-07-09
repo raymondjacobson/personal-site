@@ -8,7 +8,11 @@ import (
 )
 
 // Handlers
-func makeRoutes() {
+func grabHandles() {
+  http.Handle(
+    "/assets/",
+    http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))),
+  )
   http.HandleFunc("/", index)
 }
 
@@ -27,7 +31,7 @@ func index(res http.ResponseWriter, req *http.Request) {
 
 func main() {
   port := ":1298"
-  makeRoutes()
+  grabHandles()
   log.Println("Server listening on", port)
   err := http.ListenAndServe(port, nil)
   if err != nil {
