@@ -1,14 +1,17 @@
-<html ng-app>
+<html ng-app='rsjApp'>
   <head>
     <link rel='stylesheet' type='text/css' href='/assets/styles/grid.css'/>
     <link rel='stylesheet' type='text/css' href='/assets/styles/main.css'/>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-    <script type='text/javascript' src="/assets/js/angular.min.js"></script>
+    <script type='text/javascript' src='/assets/js/angular.min.js'></script>
+    <script type='text/javascript' src='/assets/js/angular-route.min.js'></script>
     <title>{{title}}</title>
   </head>
-  <body>
+  <body ng-controller='indexController'>
     <div class='container'>
-      <h1>Hello there</h1>
+      <!-- angular templating -->
+      <div ng-view></div>
     </div>
+    <script type='text/javascript' src='/assets/js/angles.js'></script>
   </body>
 </html>

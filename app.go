@@ -13,6 +13,10 @@ func grabHandles() {
     "/assets/",
     http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))),
   )
+  http.Handle(
+    "/templates/",
+    http.StripPrefix("/templates/", http.FileServer(http.Dir("templates"))),
+  )
   http.HandleFunc("/", index)
 }
 
