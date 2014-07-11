@@ -7,6 +7,10 @@ rsjApp.config(function($routeProvider) {
       templateUrl: 'templates/partials/_index.html',
       controller: 'indexController'
     })
+    .when('/about', {
+      templateUrl: 'templates/partials/_about.html',
+      controller: 'aboutController'
+    })
     .otherwise({
       templateUrl: 'templates/partials/_404.html',
       controller: '404Controller'
@@ -15,8 +19,12 @@ rsjApp.config(function($routeProvider) {
 
 // controllers for routes
 rsjApp.controller('indexController', function($scope) {
+  $scope.message = 'SHIT';
+  $scope.blog = 'http://google.com';
+});
+rsjApp.controller('aboutController', function($scope) {
   $scope.message = 'SHIT'
 });
 rsjApp.controller('404Controller', function($scope) {
-  $scope.message = '404 - an error'
+  $scope.message = '404 - an error';
 })

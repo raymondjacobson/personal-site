@@ -9,10 +9,12 @@ import (
 
 // Handlers
 func grabHandles() {
+  // Static assets
   http.Handle(
     "/assets/",
     http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))),
   )
+  // Templates so angular can find partials
   http.Handle(
     "/templates/",
     http.StripPrefix("/templates/", http.FileServer(http.Dir("templates"))),

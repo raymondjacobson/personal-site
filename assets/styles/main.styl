@@ -5,14 +5,53 @@
 MAIN_GRAY = #A1A1A1
 PALE_BLUE = #7F8EA4
 PALE_ORANGE = #AB8169
+PALE_RED = #5D4649
+.bg-gray
+  background lighten(MAIN_GRAY, 40%)
+
+/* TYPOGRAPHY */
+h1
+  font-size 2em
+p
+  font-size 0.9em
+  letter-spacing 0.1em
+  font-weight 400
+  line-height 1.3em
+  &.me
+    font-size 1.2em
+    line-height 1.2em
+    font-weight bold
+    letter-spacing 0.2em
+    word-spacing 0.3em
+a
+  text-decoration none 
+  color PALE_RED  
+  &.orange
+    color PALE_ORANGE
+    border-bottom 1px dotted PALE_ORANGE
+  &.blue
+    color PALE_BLUE
+    border-bottom 1px dotted PALE_BLUE
 
 /* GLOBALS */
 body
   margin 0
   padding 0
   font-family 'Lato', Helvetica, sans-serif
-  background lighten(MAIN_GRAY, 20%)
+  background lighten(MAIN_GRAY, 80%)
 
+footer
+  margin 0 auto
+  text-align center
+  p 
+    text-transform uppercase
+    font-size 0.2em
+    font-weight bold
+    letter-spacing 0.3em
+    small
+      font-size 8px
+      font-weight 300
+      letter-spacing 0.2em
 .cf:before,
 .cf:after
   content " "
@@ -35,4 +74,8 @@ body
 .pull-left
   float left
 
-/* TYPOGRAPHY */
+/* SPECIFICS */
+div.mid-box
+  margin-top 200px
+  margin-bottom 50px
+  text-align center

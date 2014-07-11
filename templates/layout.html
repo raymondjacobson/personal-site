@@ -8,10 +8,16 @@
     <title>{{title}}</title>
   </head>
   <body ng-controller='indexController'>
-    <div class='container'>
-      <!-- angular templating -->
-      <div ng-view></div>
+    <div class='wrapper bg-gray'>
+      <div class='container'>
+        <!-- angular templating -->
+        <div ng-view></div>
+      </div>
     </div>
+    <footer>
+      <p>Troy NY &amp; Bethesda MD</p>
+      <p><small>Raymond Jacobson | <a href="mailto:r@rsj.io">r@rsj.io</a> | 2014</small></p>
+    </footer>
     <script type='text/javascript' src='/assets/js/angles.js'></script>
   </body>
 </html>
