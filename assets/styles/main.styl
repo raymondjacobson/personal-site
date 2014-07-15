@@ -1,10 +1,20 @@
 /**** copy Raymond Jacobson 2014 ****/
 
+/* MIXINS */
+fader(prop, seconds)
+  -webkit-transition prop seconds linear
+  -moz-transition prop seconds linear
+  -ms-transition prop seconds linear
+  -o-transition prop seconds linear
+  transition prop seconds linear
+
 /* DEFINITIONS */
 // colors
+// MAIN_GRAY = #7ca19e
+// MAIN_GRAY = #a18c8d
 MAIN_GRAY = #A1A1A1
-PALE_BLUE = #7F8EA4
-PALE_ORANGE = #AB8169
+PALE_BLUE = #677891
+PALE_ORANGE = #9f7359
 PALE_RED = #5D4649
 .bg-gray
   background lighten(MAIN_GRAY, 40%)
@@ -24,14 +34,23 @@ p
     letter-spacing 0.2em
     word-spacing 0.3em
 a
+  fader(color, 0.2s)
   text-decoration none 
-  color PALE_RED  
+  color darken(MAIN_GRAY, 30%)
+  &:hover
+    color lighten(MAIN_GRAY, 20%)
   &.orange
     color PALE_ORANGE
     border-bottom 1px dotted PALE_ORANGE
+    &:hover
+      color lighten(PALE_ORANGE, 30%)
+      border-bottom 1px dotted lighten(PALE_ORANGE, 30%)
   &.blue
     color PALE_BLUE
     border-bottom 1px dotted PALE_BLUE
+    &:hover
+      color lighten(PALE_BLUE, 30%)
+      border-bottom 1px dotted lighten(PALE_BLUE, 30%)
 
 /* GLOBALS */
 body
@@ -42,6 +61,7 @@ body
 
 footer
   margin 0 auto
+  padding-bottom 10px
   text-align center
   p 
     text-transform uppercase
@@ -49,13 +69,22 @@ footer
     font-weight bold
     letter-spacing 0.3em
     small
-      font-size 8px
+      font-size 0.1rem
       font-weight 300
       letter-spacing 0.2em
 .cf:before,
 .cf:after
   content " "
   display table
+
+.nav
+  padding-top 10px
+  text-align center
+  a, a:hover
+    padding 0 2px
+    border none
+    i
+      font-size 1.2em
 
 .cf
   *zoom 1
@@ -74,10 +103,23 @@ footer
 .pull-left
   float left
 
+.pad
+  padding-top 190px
+  padding-bottom 50px
+
 /* SPECIFICS */
 div.mid-box
-  margin-top 200px
-  margin-bottom 50px
   text-align center
   margin-left auto
   margin-right auto
+
+img.headshot
+  fader(all, 0.2s)
+  border-radius 200px
+  padding 10px
+  border 1px solid PALE_BLUE
+  width 200px
+  opacity 0.6
+  &:hover
+    border 1px solid lighten(PALE_BLUE, 30%)
+    opacity 0.8

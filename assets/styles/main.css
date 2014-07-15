@@ -1,4 +1,5 @@
 /**** copy Raymond Jacobson 2014 ****/
+/* MIXINS */
 /* DEFINITIONS */
 .bg-gray {
   background: #c7c7c7;
@@ -21,16 +22,32 @@ p.me {
   word-spacing: 0.3em;
 }
 a {
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
   text-decoration: none;
-  color: #5d4649;
+  color: #717171;
+}
+a:hover {
+  color: #b4b4b4;
 }
 a.orange {
-  color: #ab8169;
-  border-bottom: 1px dotted #ab8169;
+  color: #9f7359;
+  border-bottom: 1px dotted #9f7359;
+}
+a.orange:hover {
+  color: #bd9d89;
+  border-bottom: 1px dotted #bd9d89;
 }
 a.blue {
-  color: #7f8ea4;
-  border-bottom: 1px dotted #7f8ea4;
+  color: #677891;
+  border-bottom: 1px dotted #677891;
+}
+a.blue:hover {
+  color: #94a0b3;
+  border-bottom: 1px dotted #94a0b3;
 }
 /* GLOBALS */
 body {
@@ -41,6 +58,7 @@ body {
 }
 footer {
   margin: 0 auto;
+  padding-bottom: 10px;
   text-align: center;
 }
 footer p {
@@ -50,7 +68,7 @@ footer p {
   letter-spacing: 0.3em;
 }
 footer p small {
-  font-size: 8px;
+  font-size: 0.1rem;
   font-weight: 300;
   letter-spacing: 0.2em;
 }
@@ -58,6 +76,19 @@ footer p small {
 .cf:after {
   content: " ";
   display: table;
+}
+.nav {
+  padding-top: 10px;
+  text-align: center;
+}
+.nav a,
+.nav a:hover {
+  padding: 0 2px;
+  border: none;
+}
+.nav a i,
+.nav a:hover i {
+  font-size: 1.2em;
 }
 .cf {
   *zoom: 1;
@@ -77,11 +108,29 @@ footer p small {
 .pull-left {
   float: left;
 }
+.pad {
+  padding-top: 190px;
+  padding-bottom: 50px;
+}
 /* SPECIFICS */
 div.mid-box {
-  margin-top: 200px;
-  margin-bottom: 50px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+img.headshot {
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  border-radius: 200px;
+  padding: 10px;
+  border: 1px solid #677891;
+  width: 200px;
+  opacity: 0.6;
+}
+img.headshot:hover {
+  border: 1px solid #94a0b3;
+  opacity: 0.8;
 }
