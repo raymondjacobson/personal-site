@@ -5,26 +5,29 @@ rsjApp.config(function($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'templates/partials/_index.html',
-      controller: 'indexController'
+      controller: 'indexCtrl'
     })
     .when('/about', {
       templateUrl: 'templates/partials/_about.html',
-      controller: 'aboutController'
+      controller: 'aboutCtrl'
     })
     .otherwise({
       templateUrl: 'templates/partials/_404.html',
-      controller: '404Controller'
+      controller: '404Ctrl'
     })
 });
 
 // controllers for routes
-rsjApp.controller('indexController', function($scope) {
-  $scope.message = 'SHIT';
+rsjApp.controller('defaultCtrl', function($scope) {
+  $scope.message = 'default';
+});
+rsjApp.controller('indexCtrl', function($scope) {
+  $scope.message = 'index';
   $scope.blog = 'http://google.com';
 });
-rsjApp.controller('aboutController', function($scope) {
-  $scope.message = 'SHIT'
+rsjApp.controller('aboutCtrl', function($scope) {
+  $scope.message = 'about'
 });
-rsjApp.controller('404Controller', function($scope) {
+rsjApp.controller('404Ctrl', function($scope) {
   $scope.message = '404 - an error';
 })
