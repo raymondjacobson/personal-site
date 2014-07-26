@@ -109,8 +109,13 @@ footer p small {
   float: left;
 }
 .pad {
-  padding-top: 190px;
   padding-bottom: 50px;
+}
+.pad.pad-small {
+  padding-top: 100px;
+}
+.pad.pad-large {
+  padding-top: 190px;
 }
 /* SPECIFICS */
 div.mid-box {
