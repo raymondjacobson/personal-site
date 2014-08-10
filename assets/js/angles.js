@@ -23,10 +23,11 @@ rsjApp.controller('defaultCtrl', function($scope) {
 });
 rsjApp.controller('indexCtrl', function($scope) {
   $scope.message = 'index';
-  $scope.blog = 'http://google.com';
+  $scope.blog = 'https://medium.com/@raymondjacobson';
 });
 rsjApp.controller('aboutCtrl', function($scope) {
   $scope.message = 'about'
+  $scope.blog = 'https://medium.com/@raymondjacobson';
 });
 rsjApp.controller('404Ctrl', function($scope) {
   $scope.message = '404 - an error';
