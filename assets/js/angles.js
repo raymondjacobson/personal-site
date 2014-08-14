@@ -1,5 +1,12 @@
 var rsjApp = angular.module('rsjApp', ['ngRoute']);
 
+// helpers
+var addScript = function(script_name) {
+  var s = document.createElement('script');
+  s.src = script_name;
+  document.body.appendChild(s);
+}
+
 // configure angular routes
 rsjApp.config(function($routeProvider) {
   $routeProvider
@@ -24,6 +31,7 @@ rsjApp.controller('defaultCtrl', function($scope) {
 rsjApp.controller('indexCtrl', function($scope) {
   $scope.message = 'index';
   $scope.blog = 'https://medium.com/@raymondjacobson';
+  addScript("/assets/js/main.js");
 });
 rsjApp.controller('aboutCtrl', function($scope) {
   $scope.message = 'about'
@@ -31,4 +39,4 @@ rsjApp.controller('aboutCtrl', function($scope) {
 });
 rsjApp.controller('404Ctrl', function($scope) {
   $scope.message = '404 - an error';
-})
+});

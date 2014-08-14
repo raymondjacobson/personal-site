@@ -133,9 +133,9 @@ img.headshot {
   padding: 10px;
   border: 1px solid #677891;
   width: 200px;
-  opacity: 0.6;
+  opacity: 0.9;
 }
 img.headshot:hover {
   border: 1px solid #94a0b3;
-  opacity: 0.8;
+  opacity: 0.6;
 }
