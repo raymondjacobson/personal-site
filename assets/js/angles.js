@@ -27,16 +27,19 @@ rsjApp.config(function($routeProvider) {
 // controllers for routes
 rsjApp.controller('defaultCtrl', function($scope) {
   $scope.message = 'default';
+  // addScript("/assets/js/triangles.js");
 });
 rsjApp.controller('indexCtrl', function($scope) {
   $scope.message = 'index';
   $scope.blog = 'https://medium.com/@raymondjacobson';
-  addScript("/assets/js/main.js");
+  addScript("/assets/js/triangles.js");
 });
 rsjApp.controller('aboutCtrl', function($scope) {
   $scope.message = 'about'
   $scope.blog = 'https://medium.com/@raymondjacobson';
+  addScript("/assets/js/triangles.js");
 });
 rsjApp.controller('404Ctrl', function($scope) {
   $scope.message = '404 - an error';
+  addScript("/assets/js/triangles.js");
 });

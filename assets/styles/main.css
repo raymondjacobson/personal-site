@@ -118,6 +118,10 @@ footer p small {
   padding-top: 190px;
 }
 /* SPECIFICS */
+#bg-svg {
+  position: absolute;
+  width: 100%;
+}
 div.mid-box {
   text-align: center;
   margin-left: auto;
@@ -134,6 +138,10 @@ img.headshot {
   border: 1px solid #677891;
   width: 200px;
   opacity: 0.9;
+}
+img.headshot.mini {
+  width: 100px;
+  padding: 5px;
 }
 img.headshot:hover {
   border: 1px solid #94a0b3;
