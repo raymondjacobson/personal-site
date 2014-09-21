@@ -94,11 +94,11 @@ if (!TRIANGLES_MADE) {
   }
 }
 
-setInterval(function() {
-  if (triangles.length < TRIANGLE_QTY + 10) {
-    triangles.push(makeRandomTriangle(svg));
-  }
-}, 10000);
+// setInterval(function() {
+//   if (triangles.length < TRIANGLE_QTY + 10) {
+//     triangles.push(makeRandomTriangle(svg));
+//   }
+// }, 10000);
 
 // code for moving triangles
 for (var i=0; i<triangles.length; ++i) {
