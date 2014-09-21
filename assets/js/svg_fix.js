@@ -1,0 +1,1 @@
+setTimeout(updateSVGSize(), 200);

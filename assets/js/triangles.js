@@ -1,7 +1,3 @@
-$.get("http://207.251.86.229/nyc-links-cams/LinkSpeedQuery.txt", function(data) {
-  console.log(data);
-});
-
 var STROKE_COLOR = "#B8B8B8";
 var STROKE_WIDTH = "2";
 var FILL = "rgba(255,255,255,0.08)";
