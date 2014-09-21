@@ -18,6 +18,10 @@ rsjApp.config(function($routeProvider) {
       templateUrl: 'templates/partials/_about.html',
       controller: 'aboutCtrl'
     })
+    .when('/resume', {
+      templateUrl: 'templates/partials/_resume.html',
+      controller: 'resumeCtrl'
+    })
     .otherwise({
       templateUrl: 'templates/partials/_404.html',
       controller: '404Ctrl'
@@ -32,14 +36,17 @@ rsjApp.controller('defaultCtrl', function($scope) {
 rsjApp.controller('indexCtrl', function($scope) {
   $scope.message = 'index';
   $scope.blog = 'https://medium.com/@raymondjacobson';
-  addScript("/assets/js/triangles.js");
+  if (typeof TRIANGLE_QTY == 'undefined') addScript("/assets/js/triangles.js");
 });
 rsjApp.controller('aboutCtrl', function($scope) {
   $scope.message = 'about'
   $scope.blog = 'https://medium.com/@raymondjacobson';
-  addScript("/assets/js/triangles.js");
+  if (typeof TRIANGLE_QTY == 'undefined') addScript("/assets/js/triangles.js");
+});
+rsjApp.controller('resumeCtrl', function($scope) {
+  $scope.message = 'resume';
 });
 rsjApp.controller('404Ctrl', function($scope) {
   $scope.message = '404 - an error';
-  addScript("/assets/js/triangles.js");
+  if (typeof TRIANGLE_QTY == 'undefined') addScript("/assets/js/triangles.js");
 });
