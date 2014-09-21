@@ -25,6 +25,7 @@ var updateSVGSize = function() {
 var getRandomVertexCoordinate = function(base) {
   // returns a random vertex coordinate with relation to base
   point = Math.floor(Math.random()*MAX_TRIANGLE_SIDE)+base-MAX_TRIANGLE_SIDE;
+  if (point < 0) point *= -1;
   return point;
 }
 
@@ -62,7 +63,7 @@ var moveTriangle = function(triangle, dist, speed) {
   for (var i=0; i<old_points_array.length; ++i) {
     if (i % 2 == 0 && parseInt(old_points_array[i]) > svg_width
       || i % 2 != 0 && parseInt(old_points_array[i]) > svg_height
-      || parseInt(old_points_array[i]) < -MAX_TRIANGLE_SIDE) {
+      || parseInt(old_points_array[i]) < 0) {
       dist = dist * -1;
     }
     old_points_array[i] = parseInt(old_points_array[i])+dist
