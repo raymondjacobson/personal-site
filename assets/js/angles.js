@@ -31,22 +31,25 @@ rsjApp.config(function($routeProvider) {
 // controllers for routes
 rsjApp.controller('defaultCtrl', function($scope) {
   $scope.message = 'default';
-  // addScript("/assets/js/triangles.js");
 });
 rsjApp.controller('indexCtrl', function($scope) {
   $scope.message = 'index';
   $scope.blog = 'https://medium.com/@raymondjacobson';
   if (typeof TRIANGLE_QTY == 'undefined') addScript("/assets/js/triangles.js");
+  addScript("/assets/js/svg_fix.js");
 });
 rsjApp.controller('aboutCtrl', function($scope) {
   $scope.message = 'about'
   $scope.blog = 'https://medium.com/@raymondjacobson';
   if (typeof TRIANGLE_QTY == 'undefined') addScript("/assets/js/triangles.js");
+  addScript("/assets/js/svg_fix.js");
 });
 rsjApp.controller('resumeCtrl', function($scope) {
   $scope.message = 'resume';
+  addScript("/assets/js/svg_fix.js");
 });
 rsjApp.controller('404Ctrl', function($scope) {
   $scope.message = '404 - an error';
   if (typeof TRIANGLE_QTY == 'undefined') addScript("/assets/js/triangles.js");
+  addScript("/assets/js/svg_fix.js");
 });

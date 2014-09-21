@@ -1,8 +1,30 @@
+$.get("http://207.251.86.229/nyc-links-cams/LinkSpeedQuery.txt", function(data) {
+  console.log(data);
+});
+
 var STROKE_COLOR = "#B8B8B8";
 var STROKE_WIDTH = "2";
 var FILL = "rgba(255,255,255,0.08)";
 var MAX_TRIANGLE_SIDE = 150;
 var TRIANGLE_QTY = 20;
+var TRIANGLES_MADE = false; 
+
+var updateSVGSize = function() {
+  // updates values for SVG size
+  svg_width = $('.bg-gray').width();
+  svg_height = $('.bg-gray').height();
+  for (var i=0; i<triangles.length; ++i) {
+    old_points = triangles[i].attr("points");
+    old_points_array = old_points.split(",");
+    for (var j=0; j<old_points_array.length; ++j) {
+      if (j % 2 == 0 && parseInt(old_points_array[j]) > svg_width
+        || j % 2 != 0 && parseInt(old_points_array[j]) > svg_height
+        || parseInt(old_points_array[j]) < -MAX_TRIANGLE_SIDE) {
+        triangles[i].attr('visibility', 'hidden');
+      }
+    }
+  }
+}
 
 var getRandomVertexCoordinate = function(base) {
   // returns a random vertex coordinate with relation to base
@@ -65,15 +87,19 @@ $('#bg-svg').height($('.bg-gray').height());
 // code for making triangles
 var svg = d3.select("#bg-svg");
 
-var svg_width = $('#bg-svg').width()
-  , svg_height = $('#bg-svg').height();
+svg_width = $('.bg-gray').width();
+svg_height = $('.bg-gray').height();
 
-var triangles = [];
-for(var i=0; i<TRIANGLE_QTY; ++i) {
-  triangles.push(makeRandomTriangle(svg));
+if (!TRIANGLES_MADE) {
+  var triangles = [];
+  for(var i=0; i<TRIANGLE_QTY; ++i) {
+    triangles.push(makeRandomTriangle(svg));
+    TRIANGLES_MADE = true;
+  }
 }
 
 // code for moving triangles
 for (var i=0; i<triangles.length; ++i) {
   moveTriangle(triangles[i], 1*positiveOrNegative(), 100);
 }
+
