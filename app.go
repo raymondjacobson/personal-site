@@ -5,6 +5,7 @@ import (
   "log"
   "github.com/hoisie/mustache"
   "net/http"
+  "os"
 )
 
 // Handlers
@@ -36,7 +37,7 @@ func index(res http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-  port := ":1298"
+  port := ":" + os.Args[1]
   grabHandles()
   log.Println("Server listening on", port)
   err := http.ListenAndServe(port, nil)

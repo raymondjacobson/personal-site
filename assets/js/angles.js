@@ -14,6 +14,10 @@ rsjApp.config(function($routeProvider) {
       templateUrl: 'templates/partials/_index.html',
       controller: 'indexCtrl'
     })
+    .when('/projects', {
+      templateUrl: 'templates/partials/_projects.html',
+      controller: 'projectsCtrl'
+    })
     .when('/about', {
       templateUrl: 'templates/partials/_about.html',
       controller: 'aboutCtrl'
@@ -41,6 +45,11 @@ rsjApp.controller('indexCtrl', function($scope) {
 rsjApp.controller('aboutCtrl', function($scope) {
   $scope.message = 'about'
   $scope.blog = 'https://medium.com/@raymondjacobson';
+  if (typeof TRIANGLE_QTY == 'undefined') addScript("/assets/js/triangles.js");
+  addScript("/assets/js/svg_fix.js");
+});
+rsjApp.controller('projectsCtrl', function($scope) {
+  $scope.message = 'projects'
   if (typeof TRIANGLE_QTY == 'undefined') addScript("/assets/js/triangles.js");
   addScript("/assets/js/svg_fix.js");
 });

@@ -89,10 +89,16 @@ svg_height = $('.bg-gray').height();
 if (!TRIANGLES_MADE) {
   var triangles = [];
   for(var i=0; i<TRIANGLE_QTY; ++i) {
-    triangles.push(makeRandomTriangle(svg));
+      triangles.push(makeRandomTriangle(svg));
     TRIANGLES_MADE = true;
   }
 }
+
+setInterval(function() {
+  if (triangles.length < TRIANGLE_QTY + 10) {
+    triangles.push(makeRandomTriangle(svg));
+  }
+}, 10000);
 
 // code for moving triangles
 for (var i=0; i<triangles.length; ++i) {
