@@ -26,6 +26,10 @@ rsjApp.config(function($routeProvider) {
       templateUrl: 'templates/partials/_resume.html',
       controller: 'resumeCtrl'
     })
+    .when('/nature', {
+      templateUrl: 'templates/partials/_nature.html',
+      controller: 'natureCtrl'
+    })
     .otherwise({
       templateUrl: 'templates/partials/_404.html',
       controller: '404Ctrl'
@@ -55,6 +59,10 @@ rsjApp.controller('projectsCtrl', function($scope) {
 });
 rsjApp.controller('resumeCtrl', function($scope) {
   $scope.message = 'resume';
+  addScript("/assets/js/svg_fix.js");
+});
+rsjApp.controller('natureCtrl', function($scope) {
+  $scope.message = 'nature';
   addScript("/assets/js/svg_fix.js");
 });
 rsjApp.controller('404Ctrl', function($scope) {
